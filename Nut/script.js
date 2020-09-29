@@ -12,9 +12,9 @@ function preload() {
 
 
 function setup() {
- createCanvas(800,700)
+ createCanvas(1436,707)
  audio = loadSound("assets/nutmp3.mp3");
- score = document.cookie;
+ score = 0
  overnut = "Nuts:"
  nut.loadPixels()
  nut3.loadPixels()
@@ -39,38 +39,4 @@ function draw() {
 function mousePressed() {
   audio.play();
   score = score + 1
-}
-
-function setCookie(cname,cvalue,exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  var expires = "expires=" + d.toGMTString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function checkCookie() {
-  var user=getCookie("username");
-  if (user != "") {
-  } else {
-     user = prompt("Choose a name if you want your progress to be saved:","");
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
-  }
 }
