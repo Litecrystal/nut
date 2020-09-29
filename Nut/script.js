@@ -28,7 +28,7 @@ function setup() {
 
 function draw() {
   background(255, 128, 0)
-  image(nut3, 250, 200, 600, 600)
+  image(nut3, 500, 500, 300, 300)
   textSize(35)
   text(score, 190, 31)
   text(overnut, 100, 30)
